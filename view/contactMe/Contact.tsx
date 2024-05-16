@@ -8,7 +8,7 @@ export default function Contact() {
       <div className=" h-[100px] border-b-2 border-b-black"></div>
       <div>
         <div className=" text-[14rem] flex flex-col gap-[-20px] relative mr-[22%]">
-          <h2 className="  text-[12rem] font-mono font-extrabold">צור איתי</h2>
+          <h2 className="  text-[12rem] font-mono font-extrabold">צור </h2>
           <h2 className=" text-[12rem] absolute bottom-[-62%] right-0 font-mono font-extrabold">
             קשר{" "}
           </h2>
@@ -42,7 +42,7 @@ export default function Contact() {
         width={800}
         height={800}
         alt="test"
-        className="w-[40vw] absolute left-0 bottom-[25%] opacity-45 z-[-1] "
+        className="w-[45vw] absolute left-0 bottom-[25%] opacity-45 z-[-1] "
       />
       <FormC />
     </div>
