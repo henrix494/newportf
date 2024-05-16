@@ -41,6 +41,7 @@ export default function PorjectWto() {
       gsap.to(".img_four", {
         scrollTrigger: {
           trigger: ".img_four",
+          start: "top center",
 
           toggleActions: "play reverse play reverse",
         },

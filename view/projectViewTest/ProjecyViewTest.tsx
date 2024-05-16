@@ -42,6 +42,7 @@ export default function ProjecyViewTest() {
       gsap.to(".img_Two", {
         scrollTrigger: {
           trigger: ".img_Two",
+          start: "top center",
 
           toggleActions: "play reverse play reverse",
         },
