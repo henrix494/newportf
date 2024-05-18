@@ -21,6 +21,7 @@ export interface projectDetailsType {
   ImgTwo: string | StaticImport;
   imgFour?: string | StaticImport;
   projectTitle?: string;
+  miniImg: string;
 }
 
 export interface projectCardPropsTypes {

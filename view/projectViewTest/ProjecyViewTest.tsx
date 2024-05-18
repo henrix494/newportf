@@ -14,6 +14,7 @@ export default function ProjecyViewTest() {
             imgOne={item.imgOne}
             imgTwo={item.ImgTwo}
             key={index}
+            miniImg={item.miniImg}
           />
         );
       })}

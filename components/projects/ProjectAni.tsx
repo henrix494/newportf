@@ -11,6 +11,7 @@ interface Props {
   imgOne: string;
   imgTwo: string;
   index: number;
+  miniImg: string;
 }
 
 export default function ProjectAni({
@@ -20,6 +21,7 @@ export default function ProjectAni({
   imgOne,
   imgTwo,
   index,
+  miniImg,
 }: Props) {
   const ref = useRef(null);
   const titleRef = useRef(null);
@@ -94,7 +96,7 @@ export default function ProjectAni({
           toggleActions: "play reverse play reverse",
         },
         opacity: 1,
-        duration: 2,
+        duration: 1,
       });
     }, ref);
 
@@ -123,13 +125,11 @@ export default function ProjectAni({
       <div className="flex lg:h-[50%] h-full">
         <div className="mr-auto ml-auto flex flex-col pt-7">
           <div className="relative">
-            <Image
-              src={"/project/work.svg"}
-              width={30}
-              height={30}
-              alt="work"
-            />
-            <span ref={bgSpanRef} className="opacity-0"></span>
+            <Image src={miniImg} width={30} height={30} alt="work" />
+            <span
+              ref={bgSpanRef}
+              className={`opacity-0 bg_span_${index}`}
+            ></span>
           </div>
         </div>
         <h3
