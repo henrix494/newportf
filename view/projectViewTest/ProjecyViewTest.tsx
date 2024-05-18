@@ -13,6 +13,7 @@ export default function ProjecyViewTest() {
             projetName={item.projectTitle}
             imgOne={item.imgOne}
             imgTwo={item.ImgTwo}
+            key={index}
           />
         );
       })}

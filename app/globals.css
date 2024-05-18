@@ -6,7 +6,29 @@
   background: linear-gradient(transparent, #7c72ff 30%);
 }
 
-.bg_span {
+.bg_span_0 {
+  background-color: #55d366;
+  filter: blur(10px);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: -1 !important;
+  left: -15%;
+  top: -10%;
+  border-radius: 50%;
+}
+.bg_span_1 {
+  background-color: #55d366;
+  filter: blur(10px);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: -1 !important;
+  left: -15%;
+  top: -10%;
+  border-radius: 50%;
+}
+.bg_span_2 {
   background-color: #55d366;
   filter: blur(10px);
   position: absolute;

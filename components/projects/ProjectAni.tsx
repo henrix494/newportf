@@ -92,7 +92,7 @@ export default function ProjectAni({
       },
       opacity: 1,
 
-      duration: 10,
+      duration: 2,
     });
   }, [ref]);
   return (
@@ -121,7 +121,7 @@ export default function ProjectAni({
               height={30}
               alt="work"
             />
-            <span className={`bg_span_${index} opacity-0`}></span>
+            <span className={`bg_span_${index} opacity-0 `}></span>
           </div>
         </div>
         <h3
