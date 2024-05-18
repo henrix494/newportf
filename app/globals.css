@@ -43,7 +43,7 @@
     background-position: 0 0;
   }
 }
-@media all and (max-height: 810px) {
+@media all and (max-height: 1000px) {
   .h-res {
     font-size: 20rem !important;
   }
