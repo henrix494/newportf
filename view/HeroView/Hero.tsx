@@ -5,7 +5,11 @@ import Text from "@/components/hero/heroBIGText/Text";
 import Image from "next/image";
 export default function Hero() {
   const navBarLinksElements = navBarLinks.map((link) => (
-    <a key={link.name} href={link.href}>
+    <a
+      className=" hover:opacity-60 transition-all"
+      key={link.name}
+      href={link.href}
+    >
       {link.name}
     </a>
   ));
@@ -20,11 +24,14 @@ export default function Hero() {
                 <nav key={index} className="flex text-3xl gap-20 max-lg:hidden">
                   {navBarLinksElements}
                 </nav>
-                <p className="lg:w-[60%] leading-8 text-xl lg:pt-10">
-                  כמפתח ווב, אני מתמקד ביצירת חוויות דיגיטליות המשלבות באופן חלק
-                  בין יצירתיות לפונקציונליות. בעזרת עין חדה לפרטים והבנה מעמיקה
-                  של טכנולוגיות האינטרנט, אני מתאמץ ליצור אתרים ויישומים העונים
-                  לצרכי המשתמשים ועוברים מעבר לציפיותיהם.
+                <p className="lg:w-[70%] leading-10 lg:text-2xl lg:pt-10 relative lg:tracking-wide	">
+                  <span className="mark">כמפתח ווב</span>, אני מתמקד ביצירת
+                  חוויות דיגיטליות המשלבות באופן חלק בין יצירתיות לפונקציונליות.
+                  בעזרת עין חדה לפרטים והבנה מעמיקה של טכנולוגיות האינטרנט,
+                  <span className="mark">
+                    אני מתאמץ ליצור אתרים ויישומים העונים לצרכי המשתמשים ועוברים
+                    מעבר לציפיותיהם.
+                  </span>
                 </p>
               </div>
             )}

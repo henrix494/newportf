@@ -12,14 +12,15 @@ export interface navBarLinksTypes {
 }
 
 export interface projectDetailsType {
-  startTime: string;
-  endTime: string;
+  startTime?: string;
+  endTime?: string;
   title: string;
   description: string;
-  descriptionTwo: string;
+  descriptionTwo?: string;
   imgOne: string | StaticImport;
   ImgTwo: string | StaticImport;
-  imgFour: string | StaticImport;
+  imgFour?: string | StaticImport;
+  projectTitle?: string;
 }
 
 export interface projectCardPropsTypes {
