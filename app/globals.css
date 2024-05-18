@@ -43,3 +43,11 @@
     background-position: 0 0;
   }
 }
+@media all and (max-height: 700px) {
+  .h-res {
+    font-size: 20rem;
+  }
+  .h-res_head {
+    gap: 0px !important;
+  }
+}

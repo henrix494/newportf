@@ -20,7 +20,7 @@ export default function Hero() {
         {[...Array(2)].map((_, index) => (
           <Card index={index} key={index}>
             {index === 0 && (
-              <div className="px-10 pt-10 flex flex-col gap-10">
+              <div className="px-10 pt-10 flex flex-col gap-10 h-res_head">
                 <nav key={index} className="flex text-3xl gap-20 max-lg:hidden">
                   {navBarLinksElements}
                 </nav>
