@@ -43,9 +43,9 @@
     background-position: 0 0;
   }
 }
-@media all and (max-height: 700px) {
+@media all and (max-height: 810px) {
   .h-res {
-    font-size: 20rem;
+    font-size: 20rem !important;
   }
   .h-res_head {
     gap: 0px !important;
