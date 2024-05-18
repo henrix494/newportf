@@ -3,9 +3,10 @@ import Image from "next/image";
 import { formDetail } from "@/constants/ContactSection/FormDetails";
 export default function ContactMobile() {
   return (
-    <div className="lg:hidden">
+    <div className="lg:hidden mt-10">
       <div className=" opacity-35">
         <Image
+          className="w-screen"
           src={"/social/punkContact.jpg"}
           alt="ContactImg"
           width={500}

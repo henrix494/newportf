@@ -105,7 +105,7 @@ export default function ProjectAni({
 
   return (
     <>
-      <div ref={ref} className="h-[150px]">
+      <div ref={ref} className="h-[150px] mt-10">
         <div className="flex max-lg:h-full">
           <div className="mr-auto ml-auto flex flex-col pt-8">
             <div className="w-[20px] h-[20px] rounded-full bg-[#000000f1]"></div>

@@ -7,10 +7,12 @@ export default function Contact() {
     <div className=" relative h-screen overflow-hidden max-lg:hidden">
       <div className=" h-[100px] border-b-2 border-b-black"></div>
       <div>
-        <div className=" text-[14rem] flex flex-col gap-[-20px] relative mr-[22%]">
-          <h2 className="  text-[12rem] font-mono font-extrabold">צור </h2>
-          <h2 className=" text-[12rem] absolute bottom-[-62%] right-0 font-mono font-extrabold">
-            קשר{" "}
+        <div className=" text-[14rem] flex flex-col gap-[-20px] relative max-lg:mr-[30%] mr-[22%]">
+          <h2 className="text-[10rem]  2xl:text-[12rem] font-mono font-extrabold">
+            צור
+          </h2>
+          <h2 className="  text-[12rem] absolute bottom-[-62%] right-0 font-mono font-extrabold">
+            קשר
           </h2>
           <h3 className="text-xl absolute bottom-[-62%] right-0 text-[#5f5e5e] ">
             אם יש לכם כל שאלה או הצעה לשיפור כתוב לנו
@@ -42,7 +44,7 @@ export default function Contact() {
         width={800}
         height={800}
         alt="test"
-        className="w-[45vw] absolute left-0 bottom-[25%] opacity-45 z-[-1] "
+        className="lg:w-[45vw] absolute left-0 bottom-[25%] opacity-45 z-[-1] "
       />
       <FormC />
     </div>

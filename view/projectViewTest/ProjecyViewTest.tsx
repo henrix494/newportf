@@ -3,7 +3,7 @@ import ProjectAni from "@/components/projects/ProjectAni";
 import { projectDetails } from "@/constants/projectText/ProjectText";
 export default function ProjecyViewTest() {
   return (
-    <div className="  w-screen lg:max-w-[80vw] max-w-[90vw]  mr-auto ml-auto  max-lg:mt-10 overflow-hidden  ">
+    <div className="  w-screen lg:max-w-[80vw]   mr-auto ml-auto  max-lg:mt-10 overflow-hidden  ">
       {projectDetails.map((item, index) => {
         return (
           <ProjectAni
