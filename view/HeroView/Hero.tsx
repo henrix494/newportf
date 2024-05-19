@@ -3,7 +3,14 @@ import Card from "@/common/hero/Card";
 import { navBarLinks } from "@/constants/heroText/HeroText";
 import Text from "@/components/hero/heroBIGText/Text";
 import Image from "next/image";
-export default function Hero() {
+import { headers } from "next/headers";
+import { getDictionary } from "@/app/[lang]/dictionaries";
+
+export default async function Hero({ lang }: any) {
+  const dict = await getDictionary(lang);
+  console.log(lang);
+  const headerList = headers();
+  const browserName = headerList.get("X-Browser");
   const navBarLinksElements = navBarLinks.map((link) => (
     <a
       className=" hover:opacity-60 transition-all"
@@ -15,7 +22,11 @@ export default function Hero() {
   ));
 
   return (
-    <div className="p-[0.5px] lg:h-screen bg-slate-200 relative overflow-hidden flex flex-col items-center">
+    <div
+      className={` ${
+        browserName === "Edge" ? "p-[0px]" : "p-[0.5px]"
+      } edge1314 lg:h-screen bg-slate-200 relative overflow-hidden flex flex-col items-center`}
+    >
       <div className="flex gap-[1px] pb-[0.5px] pr-[0.5px] max-lg:flex-col">
         {[...Array(2)].map((_, index) => (
           <Card index={index} key={index}>
@@ -24,7 +35,7 @@ export default function Hero() {
                 <nav key={index} className="flex text-3xl gap-20 max-lg:hidden">
                   {navBarLinksElements}
                 </nav>
-                <p className="lg:w-[70%] leading-10 lg:text-2xl lg:pt-10 relative lg:tracking-wide	">
+                <p className="lg:w-[70%] leading-10 lg:text-2xl lg:pt-10 relative lg:tracking-wide h-alot_of_text	">
                   <span className="mark">כמפתח ווב</span>, אני מתמקד ביצירת
                   חוויות דיגיטליות המשלבות באופן חלק בין יצירתיות לפונקציונליות.
                   בעזרת עין חדה לפרטים והבנה מעמיקה של טכנולוגיות האינטרנט,

@@ -36,7 +36,7 @@ export default function FormC() {
       console.log(error);
     }
   };
-  console.log(errors);
+
   return (
     <>
       <div className="w-[99.99999vw] lg:absolute bottom-[0%] border-t-2 border-black    ">
@@ -48,7 +48,7 @@ export default function FormC() {
             >
               {formDetail.map((form, index) => {
                 return (
-                  <div className=" relative" key={form.id}>
+                  <div className=" relative " key={form.id}>
                     <label
                       className={` absolute  transition-all ${
                         isTyping.formId === index &&
@@ -83,7 +83,7 @@ export default function FormC() {
               })}
               <button
                 type="submit"
-                className=" w-[30%] text-[8rem] font-extrabold flex justify-center font-mono cursor-pointer hover:opacity-40 absolute left-0 top-0"
+                className="h-res_send_btn w-[30%] text-[8rem] font-extrabold flex justify-center font-mono cursor-pointer hover:opacity-40 absolute left-0 top-0"
               >
                 שלח
               </button>
