@@ -1,0 +1,19 @@
+{
+  "Index": {
+    "title": "שלום!"
+  },
+  "NavBar": {
+    "home": { "name": "Home", "href": "/" },
+    "projects": { "name": "Projects", "href": "/" },
+    "contact": { "name": "Contact", "href": "/" }
+  },
+  "bigText": {
+    "FirstName": "Natan",
+    "LastName": "Minkov"
+  },
+  "heroText": {
+    "HeroMainTextMarkOne": "As a web developer ",
+    "HeroMainTextMarkTwo": " I strive to create websites and applications that meet user needs and exceed their expectations.",
+    "HeroMainTextNoraml": ", I focus on creating digital experiences that seamlessly blend creativity with functionality. With a keen eye for detail and a deep understanding of web technologies,"
+  }
+}

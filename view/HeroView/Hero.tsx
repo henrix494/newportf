@@ -4,22 +4,27 @@ import { navBarLinks } from "@/constants/heroText/HeroText";
 import Text from "@/components/hero/heroBIGText/Text";
 import Image from "next/image";
 import { headers } from "next/headers";
-import { getDictionary } from "@/app/[lang]/dictionaries";
+import { useTranslations } from "next-intl";
 
-export default async function Hero({ lang }: any) {
-  const dict = await getDictionary(lang);
-  console.log(lang);
+export default function Hero() {
+  const t = useTranslations("NavBar");
+  const heroText = useTranslations("heroText");
   const headerList = headers();
   const browserName = headerList.get("X-Browser");
-  const navBarLinksElements = navBarLinks.map((link) => (
-    <a
-      className=" hover:opacity-60 transition-all"
-      key={link.name}
-      href={link.href}
-    >
-      {link.name}
-    </a>
-  ));
+  const keys = ["home", "projects", "contact"] as const;
+
+  const navBarLinksElements = keys.map((link) => {
+    console.log(link);
+    return (
+      <a
+        className=" hover:opacity-60 transition-all"
+        key={`${link}.name`}
+        href={`${link}`}
+      >
+        {t(`${link}.name`)}
+      </a>
+    );
+  });
 
   return (
     <div
@@ -36,13 +41,11 @@ export default async function Hero({ lang }: any) {
                   {navBarLinksElements}
                 </nav>
                 <p className="lg:w-[70%] leading-10 lg:text-2xl lg:pt-10 relative lg:tracking-wide h-alot_of_text	">
-                  <span className="mark">כמפתח ווב</span>, אני מתמקד ביצירת
-                  חוויות דיגיטליות המשלבות באופן חלק בין יצירתיות לפונקציונליות.
-                  בעזרת עין חדה לפרטים והבנה מעמיקה של טכנולוגיות האינטרנט,
                   <span className="mark">
-                    אני מתאמץ ליצור אתרים ויישומים העונים לצרכי המשתמשים ועוברים
-                    מעבר לציפיותיהם.
+                    {heroText("HeroMainTextMarkOne")}
                   </span>
+                  {heroText("HeroMainTextMarkTwo")}
+                  <span className="mark">{heroText("HeroMainTextNoraml")}</span>
                 </p>
               </div>
             )}
