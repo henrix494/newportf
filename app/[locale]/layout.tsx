@@ -20,8 +20,8 @@ export default async function RootLayout({
 }>) {
   const messages = await getMessages();
   return (
-    <html lang={locale}  dir={locale === "en" ? "ltr":"rtl"}>
-      <NextIntlClientProvider locale={locale}  messages={messages}>
+    <html lang={locale} dir={locale === "en" ? "ltr" : "rtl"}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={inter.className}>{children}</body>
       </NextIntlClientProvider>
     </html>

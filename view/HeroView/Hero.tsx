@@ -5,16 +5,16 @@ import Text from "@/components/hero/heroBIGText/Text";
 import Image from "next/image";
 import { headers } from "next/headers";
 import { useTranslations } from "next-intl";
-interface props {
-  locale: string;
-}
-export default function Hero({ locale }: props) {
+
+export default function Hero() {
   const t = useTranslations("NavBar");
   const heroText = useTranslations("heroText");
   const headerList = headers();
   const browserName = headerList.get("X-Browser");
   const keys = ["home", "projects", "contact"] as const;
+
   const navBarLinksElements = keys.map((link) => {
+    console.log(link);
     return (
       <a
         className=" hover:opacity-60 transition-all"
@@ -29,10 +29,10 @@ export default function Hero({ locale }: props) {
   return (
     <div
       className={` ${
-        browserName === "Edge" ? "p-[0px]" : "p-[1px]"
+        browserName === "Edge" ? "p-[0px]" : "p-[0.5px]"
       } edge1314 lg:h-screen bg-slate-200 relative overflow-hidden flex flex-col items-center`}
     >
-      <div className="flex gap-[1px] pb-[1px] pr-[0.5px] max-lg:flex-col">
+      <div className="flex gap-[1px] pb-[0.5px] pr-[0.5px] max-lg:flex-col">
         {[...Array(2)].map((_, index) => (
           <Card index={index} key={index}>
             {index === 0 && (
@@ -50,11 +50,7 @@ export default function Hero({ locale }: props) {
               </div>
             )}
             {index === 1 && (
-              <div
-                className={`flex ${
-                  locale !== "en" && "flex-row-reverse"
-                }  max-lg:items-center max-lg:justify-center max-lg:h-full `}
-              >
+              <div className="flex flex-row-reverse max-lg:items-center max-lg:justify-center max-lg:h-full ">
                 <h3 className="text-left p-5 lg:text-6xl text-3xl font-bold ">
                   portfolio 2
                   <div className=" animate-bounce inline-block">.</div>0
@@ -69,11 +65,7 @@ export default function Hero({ locale }: props) {
                   href="https://portfolio-ten-sepia-44.vercel.app/"
                   target="__blank"
                 >
-                  <h3
-                    className={`text-left   flex ${
-                      locale === "en" && "flex-row-reverse"
-                    }  p-5 lg:text-6xl font-bold text-3xl cursor-pointer hover:opacity-35 transition-all duration-300 `}
-                  >
+                  <h3 className="text-left p-5 lg:text-6xl font-bold text-3xl cursor-pointer hover:opacity-35 transition-all duration-300 ">
                     0<div className=" animate-bounce inline-block">.</div>1
                   </h3>
                 </a>

@@ -3,8 +3,7 @@ import ProjectPage from "@/view/projectView/PorjectPage";
 import Contact from "@/view/contactMe/Contact";
 import ContactMobile from "@/view/contactMe/ContactMobile";
 import ProjecyViewTest from "@/view/projectViewTest/ProjecyViewTest";
-export default async function Home( { params: { locale }}:any) {
-  
+export default async function Home({ params: { locale } }: any) {
   return (
     <main className="">
       <Hero locale={locale} />
