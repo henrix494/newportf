@@ -1,0 +1,57 @@
+{
+  "Index": {
+    "title": "שלום!"
+  },
+  "NavBar": {
+    "home": { "name": "Home", "href": "/" },
+    "projects": { "name": "Projects", "href": "/" },
+    "contact": { "name": "Contact", "href": "/" }
+  },
+  "bigText": {
+    "FirstName": "Natan",
+    "LastName": "Minkov"
+  },
+  "heroText": {
+    "HeroMainTextMarkOne": "As a web developer ",
+    "HeroMainTextMarkTwo": " I strive to create websites and applications that meet user needs and exceed their expectations.",
+    "HeroMainTextNoraml": ", I focus on creating digital experiences that seamlessly blend creativity with functionality. With a keen eye for detail and a deep understanding of web technologies,"
+  },
+  "projectSection": {
+    "firstProject": {
+      "title": "My Projects",
+      "semiTitle": "Ai recipe builder",
+      "description": "Such a website could be a unique tool that can make the cooking experience of its users special and interesting. Using recipe data and cooking principles loaded onto the site through machine learning technology, when users input their available ingredients, the system uses AI algorithms to suggest personalized and unique recipes",
+      "imgOne": "/project/recipe_ai.png.png",
+      "ImgTwo": "/project/recipe_ai_two.png",
+      "svgImg": "/project/work.svg",
+      "techOne": "/techStack/next-js.svg",
+      "techTwo": "/techStack/clerk.svg",
+      "techThree": "/techStack/tailwindcss.svg",
+      "teachFour": "/techStack/convex.svg"
+    },
+    "secoundProject": {
+      "title": "Client management app",
+      "semiTitle": "Client management app for barbers",
+      "description": "",
+      "imgOne": "/project/dashboneThree.png",
+      "ImgTwo": "/project/dashbone.png",
+      "svgImg": "/project/scissors.svg",
+      "techOne": "/techStack/next-js.svg",
+      "techTwo": "/techStack/auth-js.png",
+      "techThree": "/techStack/prisma-svgrepo-com.svg",
+      "teachFour": "/techStack/redux.svg"
+    },
+    "thirdProject": {
+      "title": "",
+      "semiTitle": "",
+      "description": "",
+      "imgOne": "/project/workOne.png",
+      "ImgTwo": "/project/WorkTwo.png",
+      "svgImg": "/project/scissors.svg",
+      "techOne": "/techStack/next-js.svg",
+      "techTwo": "/techStack/clerk.svg",
+      "techThree": "/techStack/tailwindcss.svg",
+      "teachFour": "/techStack/convex.svg"
+    }
+  }
+}
