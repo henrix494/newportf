@@ -11,7 +11,6 @@ interface props {
 }
 export default function Text({ locale }: props) {
   const containerRef = useRef<HTMLDivElement>(null);
-  console.log(locale);
   gsap.registerPlugin(ScrollTrigger);
   const t = useTranslations("bigText");
   useGSAP(

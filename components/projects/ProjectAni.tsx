@@ -31,80 +31,72 @@ export default function ProjectAni({
   techThree,
   teachFour,
 }: Props) {
-  const ref = useRef(null);
-  const titleRef = useRef(null);
-  const semiTitleRef = useRef(null);
-  const imgOneRef = useRef(null);
-  const imgTwoRef = useRef(null);
-  const firstLineRef = useRef(null);
-  const secondLineRef = useRef(null);
-  const bgSpanRef = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const semiTitleRef = useRef<HTMLHeadingElement>(null);
+  const imgOneRef = useRef<HTMLImageElement>(null);
+  const imgTwoRef = useRef<HTMLImageElement>(null);
+  const firstLineRef = useRef<HTMLDivElement>(null);
+  const secondLineRef = useRef<HTMLDivElement>(null);
+  const bgSpanRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      gsap.to(titleRef.current, {
-        scrollTrigger: {
+      const animations = [
+        {
+          element: titleRef.current,
+          animation: { x: 0, ease: "power2.inOut", duration: 2 },
           trigger: titleRef.current,
-          toggleActions: "play reverse play reverse",
         },
-        x: 0,
-        ease: "power2.inOut",
-        duration: 2,
-      });
-      gsap.to(semiTitleRef.current, {
-        scrollTrigger: {
+        {
+          element: semiTitleRef.current,
+          animation: { opacity: 1, duration: 3 },
           trigger: semiTitleRef.current,
-          toggleActions: "play reverse play reverse",
         },
-        opacity: 1,
-        duration: 3,
-      });
-      gsap.to(imgOneRef.current, {
-        scrollTrigger: {
+        {
+          element: imgOneRef.current,
+          animation: { x: 0, opacity: 1, duration: 1 },
           trigger: imgOneRef.current,
-          toggleActions: "play reverse play reverse",
         },
-        x: 0,
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to(imgTwoRef.current, {
-        scrollTrigger: {
+        {
+          element: imgTwoRef.current,
+          animation: { x: 0, opacity: 1, duration: 1 },
           trigger: imgTwoRef.current,
-          toggleActions: "play reverse play reverse",
         },
-        x: 0,
-        opacity: 1,
-        duration: 1,
-      });
-      gsap.to(firstLineRef.current, {
-        scrollTrigger: {
+        {
+          element: firstLineRef.current,
+          animation: { height: "100%", duration: 3 },
           trigger: firstLineRef.current,
           start: "bottom bottom",
-          toggleActions: "play reverse play reverse",
         },
-        height: "100%",
-        duration: 3,
-      });
-      gsap.to(secondLineRef.current, {
-        scrollTrigger: {
+        {
+          element: secondLineRef.current,
+          animation: { height: "100%", duration: 3 },
           trigger: secondLineRef.current,
           start: "bottom bottom",
-          toggleActions: "play reverse play reverse",
         },
-        height: "100%",
-        duration: 3,
-      });
-      gsap.to(bgSpanRef.current, {
-        scrollTrigger: {
+        {
+          element: bgSpanRef.current,
+          animation: { opacity: 1, duration: 1 },
           trigger: bgSpanRef.current,
           start: "bottom bottom",
-          toggleActions: "play reverse play reverse",
         },
-        opacity: 1,
-        duration: 1,
+      ];
+
+      animations.forEach(({ element, animation, trigger, start }) => {
+        if (element) {
+          gsap.to(element, {
+            ...animation,
+            scrollTrigger: {
+              trigger,
+              toggleActions: "play reverse play reverse",
+              ...(start && { start }),
+              markers: true,
+            },
+          });
+        }
       });
     }, ref);
 
@@ -156,16 +148,22 @@ export default function ProjectAni({
         </div>
         <div className="w-[90%]">
           <article className="lg:w-[60%] mt-2 pt-5">{projectDes}</article>
-          <div className="my-5 flex gap-5 flex-wrap ">
-            <Image src={techOne} width={80} height={80} alt="next" />
-            <Image src={techTwo} width={80} height={80} alt="next" />
-            <Image src={techThree} width={80} height={80} alt="next" />
-
-            <Image src={teachFour} width={80} height={80} alt="next" />
+          <div className="my-5 flex gap-5 flex-wrap">
+            {[techOne, techTwo, techThree, teachFour].map(
+              (tech, idx) =>
+                tech && (
+                  <Image
+                    key={idx}
+                    src={tech}
+                    width={80}
+                    height={80}
+                    alt="tech"
+                  />
+                )
+            )}
           </div>
         </div>
       </div>
-
       <div className="w-[90%]">
         <div className="mt-2 flex gap-2 flex-col">
           <Image

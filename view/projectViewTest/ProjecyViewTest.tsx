@@ -9,7 +9,6 @@ export default function ProjecyViewTest() {
   return (
     <div className="  w-screen lg:max-w-[80vw]   mr-auto ml-auto  max-lg:mt-10 overflow-hidden  ">
       {keys.map((item, index) => {
-        console.log(projectsText(`${item}.imgOne`));
         return (
           //svgImg
           <ProjectAni

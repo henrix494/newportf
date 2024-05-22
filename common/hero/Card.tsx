@@ -6,7 +6,6 @@ import { useGSAP } from "@gsap/react";
 import useWindowDimensions from "@/util/windowDem";
 export default function Card({ children, index }: propsTypesCARD) {
   const { width, height } = useWindowDimensions();
-  console.log(width);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(

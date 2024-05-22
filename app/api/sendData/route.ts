@@ -6,7 +6,6 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
   await connectDB();
 
   const { name, email, msg } = await req.json();
-  console.log(name);
   if (!name || !email || !msg)
     return NextResponse.json("missing field", { status: 401 });
   else {
@@ -18,7 +17,6 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
           email: email,
           msg: msg,
         });
-        console.log(`send to api name:${name} email : ${email} msg : ${msg}`);
         return NextResponse.json("הודעה נשלחה", { status: 201 });
       } else {
         return NextResponse.json("הודעה כבר נישלחה", { status: 404 });
