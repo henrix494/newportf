@@ -1,7 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { formDetail } from "@/constants/ContactSection/FormDetails";
-export default function ContactMobile() {
+import { useTranslations } from "next-intl";
+interface props {
+  locale: string;
+}
+export default function ContactMobile({ locale }: props) {
+  const textT = useTranslations("contactSection");
   return (
     <div className="lg:hidden mt-10">
       <div className=" opacity-35">
@@ -13,10 +18,23 @@ export default function ContactMobile() {
           height={500}
         />
       </div>
-      <div className="text-center font-mono font-bold text-[8rem] leading-[82%] mb-10 ">
-        <h3 className=" text-center">צור </h3>
-        <h3 className=" text-center mr-8">איתי</h3>
+      <div
+        className={`text-center font-mono font-bold text-[8rem] leading-[82%] mb-10 ${
+          locale === "en" ? "hidden" : "block"
+        } `}
+      >
+        <h3 className=" text-center"> צור</h3>
+        <h3 className=" text-center mr-8"> איתי</h3>
         <h3 className=" text-center">קשר</h3>
+      </div>
+      <div
+        className={`text-center font-mono font-bold text-[8rem] leading-[90%] mb-10 ${
+          locale === "he" ? "hidden" : "block"
+        } `}
+      >
+        <h3 className=" text-center"> Con</h3>
+        <h3 className=" text-center "> tact</h3>
+        <h3 className=" text-center">Me</h3>
       </div>
       {/* start of form */}
       <div>
@@ -36,7 +54,7 @@ export default function ContactMobile() {
           );
         })}
         <div className="  text-[8rem] font-extrabold flex justify-center font-mono cursor-pointer hover:opacity-40 border-t-2 border-black mt-20">
-          שלח
+          {textT("send")}
         </div>
       </div>
     </div>

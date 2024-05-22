@@ -2,16 +2,20 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { formDetail } from "@/constants/ContactSection/FormDetails";
 import { useState } from "react";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { MsgTypes } from "@/Model/msg";
-import { Model } from "../model/Model";
+import { useTranslations } from "next-intl";
+
 type Inputs = {
   name: string;
   email: string;
   msg: string;
 };
-export default function FormC() {
-  const [isModel, setIsModel] = useState(true);
+interface props {
+  locale: string;
+}
+export default function FormC({ locale }: props) {
+  const fromText = useTranslations("contactSection");
   const {
     register,
     handleSubmit,
@@ -41,7 +45,11 @@ export default function FormC() {
     <>
       <div className="w-[99.99999vw] lg:absolute bottom-[0%] border-t-2 border-black    ">
         <div className="flex h-[22.5vh] items-center ">
-          <div className="w-[70%] h-[22.5vh] flex items-center border-l-2 border-black justify-center ">
+          <div
+            className={`w-[70%] h-[22.5vh] flex items-center  border-black justify-center ${
+              locale === "en" ? "border-r-2" : "border-l-2"
+            }`}
+          >
             <form
               className="flex  w-[80%] justify-around"
               onSubmit={handleSubmit(onSubmit)}
@@ -83,9 +91,11 @@ export default function FormC() {
               })}
               <button
                 type="submit"
-                className="h-res_send_btn w-[30%] text-[8rem] font-extrabold flex justify-center font-mono cursor-pointer hover:opacity-40 absolute left-0 top-0"
+                className={`h-res_send_btn w-[30%] text-[8rem] font-extrabold flex justify-center font-mono cursor-pointer hover:opacity-40 absolute ${
+                  locale === "en" ? "right-0" : "left-0"
+                }  top-0`}
               >
-                שלח
+                {fromText("send")}
               </button>
             </form>
           </div>

@@ -32,7 +32,7 @@
     "secoundProject": {
       "title": "Client management app",
       "semiTitle": "Client management app for barbers",
-      "description": "",
+      "description": "A client management app for barbers can revolutionize the way barbershops operate, making client interactions smoother and more efficient. By leveraging machine learning and AI technology, the app can track client preferences, appointment histories, and hairstyle trends.",
       "imgOne": "/project/dashboneThree.png",
       "ImgTwo": "/project/dashbone.png",
       "svgImg": "/project/scissors.svg",
@@ -42,16 +42,25 @@
       "teachFour": "/techStack/redux.svg"
     },
     "thirdProject": {
-      "title": "",
-      "semiTitle": "",
-      "description": "",
+      "title": "Client tracking app",
+      "semiTitle": "Client tracking app for a samll bussiness",
+      "description": "A client tracking app can be an invaluable tool for businesses looking to improve customer relationships and enhance service quality. Utilizing machine learning and AI technology, the app tracks customer interactions, purchase histories, and preferences. ",
       "imgOne": "/project/workOne.png",
       "ImgTwo": "/project/WorkTwo.png",
-      "svgImg": "/project/scissors.svg",
+      "svgImg": "/project/mon.svg",
       "techOne": "/techStack/next-js.svg",
       "techTwo": "/techStack/clerk.svg",
       "techThree": "/techStack/tailwindcss.svg",
       "teachFour": "/techStack/convex.svg"
     }
+  },
+  "contactSection": {
+    "contact": "Contact",
+    "me": "Me",
+    "advice": "If you have any qustion or a suggestion feel free to send me a message",
+    "send": "Send",
+    "msg:": "Message",
+    "email": "Email",
+    "name": "Name"
   }
 }

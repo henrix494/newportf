@@ -2,20 +2,26 @@ import React from "react";
 import { contactIcons } from "@/constants/ContactSection/contactText";
 import Image from "next/image";
 import FormC from "@/components/Contact/FormC";
-export default function Contact() {
+import { useTranslations } from "next-intl";
+interface props {
+  locale: string;
+}
+export default function Contact({ locale }: props) {
+  const contactText = useTranslations("contactSection");
+
   return (
     <div className=" relative h-screen overflow-hidden max-lg:hidden">
       <div className=" h-[100px] border-b-2 border-b-black h-contact_main"></div>
       <div>
         <div className=" text-[14rem] flex flex-col gap-[-20px] relative max-lg:mr-[30%] mr-[22%] h-contact_res">
-          <h2 className="text-[10rem] h-contact_main_zor  2xl:text-[12rem] font-mono font-extrabold">
-            צור
+          <h2 className="text-[10rem] text-right h-contact_main_zor  2xl:text-[12rem] font-mono font-extrabold">
+            {contactText("contact")}
           </h2>
           <h2 className="h-contact_main_zor  text-[12rem] absolute bottom-[-62%] right-0 font-mono font-extrabold">
-            קשר
+            {contactText("me")}
           </h2>
           <h3 className="text-xl absolute bottom-[-62%] right-0 text-[#5f5e5e] h-contact_main_q">
-            אם יש לכם כל שאלה או הצעה לשיפור כתוב לנו
+            {contactText("advice")}
           </h3>
         </div>
       </div>
@@ -46,7 +52,7 @@ export default function Contact() {
         alt="test"
         className="lg:w-[45vw] absolute left-0 bottom-[25%] opacity-45 z-[-1] "
       />
-      <FormC />
+      <FormC locale={locale} />
     </div>
   );
 }

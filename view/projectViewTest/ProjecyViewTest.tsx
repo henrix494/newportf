@@ -1,8 +1,6 @@
 import React, { useRef, forwardRef } from "react";
 import ProjectAni from "@/components/projects/ProjectAni";
-import { projectDetails } from "@/constants/projectText/ProjectText";
 import { useTranslations } from "next-intl";
-import { link } from "fs";
 export default function ProjecyViewTest() {
   const projectsText = useTranslations("projectSection");
   const keys = ["firstProject", "secoundProject", "thirdProject"] as const;

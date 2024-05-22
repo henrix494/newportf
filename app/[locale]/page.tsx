@@ -9,8 +9,8 @@ export default async function Home({ params: { locale } }: any) {
       <Hero locale={locale} />
       {/* <ProjectPage /> */}
       <ProjecyViewTest />
-      <Contact />
-      <ContactMobile />
+      <Contact locale={locale} />
+      <ContactMobile locale={locale} />
     </main>
   );
 }
