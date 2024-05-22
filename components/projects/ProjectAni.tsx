@@ -93,7 +93,6 @@ export default function ProjectAni({
               trigger,
               toggleActions: "play reverse play reverse",
               ...(start && { start }),
-              markers: true,
             },
           });
         }
