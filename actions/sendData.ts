@@ -1,11 +1,13 @@
+"use server";
 import Msg from "@/Model/msg";
 import connectDB from "@/lib/mongodb";
 import { NextResponse, NextRequest } from "next/server";
 
-export const POST = async (req: NextRequest, res: NextResponse) => {
+export const sendMSg = async (data: any) => {
   await connectDB();
 
-  const { name, email, msg } = await req.json();
+  const { name, email, msg } = await data;
+
   if (!name || !email || !msg)
     return NextResponse.json("missing field", { status: 401 });
   else {

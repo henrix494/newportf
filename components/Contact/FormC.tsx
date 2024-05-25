@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { MsgTypes } from "@/Model/msg";
 import { useTranslations } from "next-intl";
-
+import { sendMSg } from "@/actions/sendData";
 type Inputs = {
   name: string;
   email: string;
@@ -30,12 +30,7 @@ export default function FormC({ locale }: props) {
   };
   const onSubmit: SubmitHandler<Inputs> = async (data: MsgTypes) => {
     try {
-      const sendData = await axios({
-        method: "post",
-        url: "https://www.npndesign.com/sendData",
-        data: { ...data },
-      });
-      console.log(sendData.status);
+      sendMSg(data);
     } catch (error) {
       console.log(error);
     }
