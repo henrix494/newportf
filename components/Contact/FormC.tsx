@@ -6,6 +6,7 @@ import axios from "axios";
 import { MsgTypes } from "@/Model/msg";
 import { useTranslations } from "next-intl";
 import { sendMSg } from "@/actions/sendData";
+import { toast } from "react-hot-toast";
 type Inputs = {
   name: string;
   email: string;
@@ -30,7 +31,12 @@ export default function FormC({ locale }: props) {
   };
   const onSubmit: SubmitHandler<Inputs> = async (data: MsgTypes) => {
     try {
-      sendMSg(data);
+      const dataFromServer = await sendMSg(data);
+      if (dataFromServer?.ok) {
+        toast.success("הודעה נשלחה");
+      } else {
+        toast.error("הודעה כבר נישלחה בעבר");
+      }
     } catch (error) {
       console.log(error);
     }

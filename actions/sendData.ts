@@ -1,17 +1,21 @@
 "use server";
 import Msg from "@/Model/msg";
 import connectDB from "@/lib/mongodb";
-import { NextResponse, NextRequest } from "next/server";
 
 export const sendMSg = async (data: any) => {
-  await connectDB();
+  try {
+    await connectDB();
+  } catch (error) {
+    return {
+      errors: "כבר שלחתה הודעה",
+    };
+  }
 
-  const { name, email, msg } = await data;
+  try {
+    const { name, email, msg } = data;
 
-  if (!name || !email || !msg)
-    return NextResponse.json("missing field", { status: 401 });
-  else {
-    try {
+    if (!name || !email || !msg) {
+    } else {
       const emailFind = await Msg.findOne({ email: email });
       if (!emailFind) {
         await Msg.insertMany({
@@ -19,13 +23,19 @@ export const sendMSg = async (data: any) => {
           email: email,
           msg: msg,
         });
-        return NextResponse.json("הודעה נשלחה", { status: 201 });
+        return {
+          ok: "הודעה נשלחה",
+        };
       } else {
-        return NextResponse.json("הודעה כבר נישלחה", { status: 404 });
+        return {
+          errors: "כבר שלחתה הודעה",
+        };
       }
-    } catch (error) {
-      console.log(error);
-      return NextResponse.json({ error }, { status: 500 });
     }
+  } catch (error) {
+    console.error("Error occurred:", error);
+    return {
+      errors: "בעיה בשליחה נא לנסות שוב",
+    };
   }
 };
