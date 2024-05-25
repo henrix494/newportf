@@ -48,10 +48,10 @@
       "imgOne": "/project/workOne.png",
       "ImgTwo": "/project/WorkTwo.png",
       "svgImg": "/project/mon.svg",
-      "techOne": "/techStack/next-js.svg",
-      "techTwo": "/techStack/clerk.svg",
-      "techThree": "/techStack/tailwindcss.svg",
-      "teachFour": "/techStack/convex.svg"
+      "techOne": "/techStack/react.svg",
+      "techTwo": "/techStack/node.svg",
+      "techThree": "/techStack/sql.svg",
+      "teachFour": "/techStack/auth0-svgrepo-com.svg"
     }
   },
   "contactSection": {

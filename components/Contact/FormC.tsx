@@ -32,7 +32,7 @@ export default function FormC({ locale }: props) {
     try {
       const sendData = await axios({
         method: "post",
-        url: "http://localhost:3000/api/sendData",
+        url: "https://www.npndesign.com/sendData",
         data: { ...data },
       });
       console.log(sendData.status);
