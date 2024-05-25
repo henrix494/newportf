@@ -61,6 +61,8 @@
     "send": "Send",
     "msg:": "Message",
     "email": "Email",
-    "name": "Name"
+    "name": "Name",
+    "error": "A message has already been sent before",
+    "msgSend": "Message sent"
   }
 }

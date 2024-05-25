@@ -2,7 +2,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { formDetail } from "@/constants/ContactSection/FormDetails";
 import { useState } from "react";
-import axios from "axios";
 import { MsgTypes } from "@/Model/msg";
 import { useTranslations } from "next-intl";
 import { sendMSg } from "@/actions/sendData";
@@ -33,9 +32,14 @@ export default function FormC({ locale }: props) {
     try {
       const dataFromServer = await sendMSg(data);
       if (dataFromServer?.ok) {
-        toast.success("הודעה נשלחה");
+        toast.success(fromText("msgSend"), {
+          icon: "👏",
+          style: { backgroundColor: "black", color: "white" },
+        });
       } else {
-        toast.error("הודעה כבר נישלחה בעבר");
+        toast.error(fromText("error"), {
+          style: { backgroundColor: "black", color: "white" },
+        });
       }
     } catch (error) {
       console.log(error);
