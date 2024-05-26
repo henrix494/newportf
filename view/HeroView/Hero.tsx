@@ -19,7 +19,7 @@ export default function Hero({ locale }: props) {
       <a
         className=" hover:opacity-60 transition-all"
         key={`${link}.name`}
-        href={`${link}`}
+        href={`#${link}`}
       >
         {t(`${link}.name`)}
       </a>
@@ -28,6 +28,7 @@ export default function Hero({ locale }: props) {
 
   return (
     <div
+      id="home"
       className={` ${
         browserName === "Edge" ? "p-[0px]" : "p-[1px]"
       } edge1314 lg:h-screen bg-slate-200 relative overflow-hidden flex flex-col items-center`}
