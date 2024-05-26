@@ -27,7 +27,8 @@
       "techOne": "/techStack/next-js.svg",
       "techTwo": "/techStack/clerk.svg",
       "techThree": "/techStack/tailwindcss.svg",
-      "teachFour": "/techStack/convex.svg"
+      "teachFour": "/techStack/convex.svg",
+      "href": "https://www.recipeweb.co/"
     },
     "secoundProject": {
       "title": "Client management app",
@@ -39,7 +40,8 @@
       "techOne": "/techStack/next-js.svg",
       "techTwo": "/techStack/auth-js.png",
       "techThree": "/techStack/prisma-svgrepo-com.svg",
-      "teachFour": "/techStack/redux.svg"
+      "teachFour": "/techStack/redux.svg",
+      "href": "https://barber-dashboard-lyart.vercel.app/"
     },
     "thirdProject": {
       "title": "Client tracking app",
@@ -51,7 +53,8 @@
       "techOne": "/techStack/react.svg",
       "techTwo": "/techStack/node.svg",
       "techThree": "/techStack/sql.svg",
-      "teachFour": "/techStack/auth0-svgrepo-com.svg"
+      "teachFour": "/techStack/auth0-svgrepo-com.svg",
+      "href": "https://kapit-coffee.com/login"
     }
   },
   "contactSection": {

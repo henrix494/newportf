@@ -10,6 +10,7 @@ export default function ProjecyViewTest() {
         return (
           //svgImg
           <ProjectAni
+            href={projectsText(`${item}.href`)}
             title={projectsText(`${item}.title`)}
             index={index}
             projectDes={projectsText(`${item}.description`)}
