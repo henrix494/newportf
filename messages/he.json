@@ -1,0 +1,79 @@
+{
+  "Index": {
+    "title": "שלום!"
+  },
+  "NavBar": {
+    "home": { "name": "בית", "href": "/" },
+    "projects": { "name": "פרויקטים", "href": "/" },
+    "contact": { "name": "צור קשר", "href": "/" }
+  },
+  "bigText": {
+    "FirstName": "נתן",
+    "LastName": "מינקוב"
+  },
+  "heroText": {
+    "HeroMainTextMarkOne": " כמפתח ווב, ",
+    "HeroMainTextMarkTwo": " אני מתמקד ביצירת חוויות דיגיטליות המשלבות באופן חלק בין יצירתיות לפונקציונליות. בעזרת עין חדה לפרטים והבנה מעמיקה של טכנולוגיות האינטרנט,",
+    "HeroMainTextNoraml": " אני מתאמץ ליצור אתרים ויישומים העונים לצרכי המשתמשים ועוברים מעבר לציפיותיהם."
+  },
+  "projectSection": {
+    "firstProject": {
+      "title": "הפרויקטים שלי",
+      "semiTitle": "בונה מתכונים עם AI",
+      "description": " אתר כזה עשוי להיות כלי ייחודי שיכול להפוך את חווית הבישול של משתמשיו לייחודית ומעניינת. בעזרת טכנולוגיית הלמידה המתכונים הרשמיים וכללי הבישול נטענים לאתר, כאשר המשתמשים מזינים את המצרכים הזמינים להם. המערכת משתמשת באלגוריתמי AI כדי להציע מתכונים אישיים וייחודיים ",
+      "imgOne": "/project/recipe_ai.png.png",
+      "ImgTwo": "/project/recipe_ai_two.png",
+      "svgImg": "/project/work.svg",
+      "techOne": "/techStack/next-js.svg",
+      "techTwo": "/techStack/clerk.svg",
+      "techThree": "/techStack/tailwindcss.svg",
+      "teachFour": "/techStack/convex.svg"
+    },
+    "secoundProject": {
+      "title": "אתר לניהול לקוחות",
+      "semiTitle": "ניהול לקוחות לספרים",
+      "description": "אפליקציה לניהול לקוחות עבור מספרות יכולה לשנות את אופן הפעולה של המספרות, ולהפוך את האינטראקציות עם הלקוחות לחלקות ויעילות יותר. באמצעות טכנולוגיית למידת מכונה ובינה מלאכותית, האפליקציה יכולה לעקוב אחר העדפות הלקוחות, היסטוריית התורים ומגמות התסרוקות",
+      "imgOne": "/project/dashboneThree.png",
+      "ImgTwo": "/project/dashbone.png",
+      "svgImg": "/project/scissors.svg",
+      "techOne": "/techStack/next-js.svg",
+      "techTwo": "/techStack/auth-js.png",
+      "techThree": "/techStack/prisma-svgrepo-com.svg",
+      "teachFour": "/techStack/redux.svg"
+    },
+    "thirdProject": {
+      "title": "אתר למעקב לקוחות",
+      "semiTitle": "אתר למעקב לקוחות וניהול כספים",
+      "description": "אפליקציה למעקב אחר לקוחות יכולה להיות כלי יקר ערך לעסקים המעוניינים לשפר את הקשרים עם הלקוחות ולהגביר את איכות השירות. באמצעות טכנולוגיית למידת מכונה ובינה מלאכותית, האפליקציה עוקבת אחר האינטראקציות של הלקוחות, היסטוריית הרכישות והעדפותיהם.",
+      "imgOne": "/project/workOne.png",
+      "ImgTwo": "/project/WorkTwo.png",
+      "svgImg": "/project/mon.svg",
+      "techOne": "/techStack/react.svg",
+      "techTwo": "/techStack/node.svg",
+      "techThree": "/techStack/sql.svg",
+      "teachFour": "/techStack/auth0-svgrepo-com.svg"
+    }
+  },
+  "contactSection": {
+    "contact": "צור",
+    "me": "קשר",
+    "advice": "אם יש לכם כל שאלה או הצעה לשיפור כתוב לנו",
+    "send": "שלח",
+    "msg:": "הודעה",
+    "email": "מיייל",
+    "name": "שם",
+    "error": "הודעה כבר נישלחה בעבר",
+    "msgSend": "הודעה נשלחה",
+    "mobileName:":"שם"
+  },
+  "contactMeMobile":{
+    "name":"שם",
+    "mail":"מייל",
+    "msg":"הודעה"
+  },
+  "formDetails":{
+    "formOne":{"type":"text","name":"name","id":"name","placeholder":"שם","register":"name"},
+    "formTwo":{"type":"text","name":"email","id":"email","placeholder":"מייל","register":"email"},
+    "formThree":{"type":"text","name":"msg","id":"msg","placeholder":"הודעה","register":"msg"}
+  }
+}
