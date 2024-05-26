@@ -11,7 +11,10 @@ export default function Contact({ locale }: props) {
   const contactText = useTranslations("contactSection");
 
   return (
-    <div className=" relative h-screen overflow-hidden max-lg:hidden">
+    <div
+      id="contact"
+      className=" relative h-screen overflow-hidden max-lg:hidden"
+    >
       <div className=" h-[100px] border-b-2 border-b-black h-contact_main"></div>
       <div>
         <div className=" text-[14rem] flex flex-col gap-[-20px] relative max-lg:mr-[30%] mr-[22%] h-contact_res">

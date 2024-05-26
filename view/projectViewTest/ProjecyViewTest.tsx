@@ -5,7 +5,10 @@ export default function ProjecyViewTest() {
   const projectsText = useTranslations("projectSection");
   const keys = ["firstProject", "secoundProject", "thirdProject"] as const;
   return (
-    <div className="  w-screen lg:max-w-[80vw]   mr-auto ml-auto  max-lg:mt-10 overflow-hidden  ">
+    <div
+      id="projects"
+      className="  w-screen lg:max-w-[80vw]   mr-auto ml-auto  max-lg:mt-10 overflow-hidden  "
+    >
       {keys.map((item, index) => {
         return (
           //svgImg
