@@ -16,6 +16,7 @@ interface Props {
   techTwo: string;
   techThree: string;
   teachFour?: string;
+  href: string;
 }
 
 export default function ProjectAni({
@@ -30,10 +31,11 @@ export default function ProjectAni({
   techTwo,
   techThree,
   teachFour,
+  href,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const semiTitleRef = useRef<HTMLHeadingElement>(null);
+  const semiTitleRef = useRef<HTMLAnchorElement>(null);
   const imgOneRef = useRef<HTMLImageElement>(null);
   const imgTwoRef = useRef<HTMLImageElement>(null);
   const firstLineRef = useRef<HTMLDivElement>(null);
@@ -131,12 +133,14 @@ export default function ProjectAni({
             ></span>
           </div>
         </div>
-        <h3
+        <a
+          href={href}
+          target="_blank"
           ref={semiTitleRef}
-          className="text-[#3fb950] text-xl pr-5 max-lg:pl-5 max-lg:pt-7 lg:text-4xl font-bold opacity-0 w-[90%] pt-4"
+          className="text-[#3fb950] text-xl pr-5 max-lg:pl-5 max-lg:pt-7 lg:text-4xl font-bold opacity-0 w-[90%] pt-4 cursor-pointer linkWeb  "
         >
           {projetName}
-        </h3>
+        </a>
       </div>
       <div className="flex">
         <div className="mr-auto ml-auto flex flex-col h-[200px] pt-8">
