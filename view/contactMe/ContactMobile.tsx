@@ -1,12 +1,48 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import { formDetail } from "@/constants/ContactSection/FormDetails";
 import { useTranslations } from "next-intl";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { sendMSg } from "@/actions/sendData";
+
 interface props {
   locale: string;
 }
+
+type Inputs = {
+  name: string;
+  email: string;
+  msg: string;
+};
 export default function ContactMobile({ locale }: props) {
   const textT = useTranslations("contactSection");
+  const fromText = useTranslations("contactSection");
+
+  const mobileText = useTranslations("formDetails");
+  const keys = ["formOne", "formTwo", "formThree"] as const;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = async (data: any) => {
+    try {
+      const dataFromServer = await sendMSg(data);
+      if (dataFromServer?.ok) {
+        toast.success(fromText("msgSend"), {
+          icon: "👏",
+          style: { backgroundColor: "black", color: "white" },
+        });
+      } else {
+        toast.error(fromText("error"), {
+          style: { backgroundColor: "black", color: "white" },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="lg:hidden mt-10">
       <div className=" opacity-35">
@@ -37,26 +73,40 @@ export default function ContactMobile({ locale }: props) {
         <h3 className=" text-center">Me</h3>
       </div>
       {/* start of form */}
-      <div>
-        {formDetail.map((form) => {
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {keys.map((form) => {
           return (
-            <div key={form.id} className=" flex flex-col items-center mb-5">
-              <label className="text-4xl" htmlFor={form.name}>
-                {form.placeholder}
+            <div
+              key={mobileText(`${form}.id`)}
+              className=" flex flex-col items-center mb-5"
+            >
+              <label className="text-4xl" htmlFor={mobileText(`${form}.name`)}>
+                {mobileText(`${form}.placeholder`)}
               </label>
               <input
-                className=" outline-none border-b-2 border-black"
-                type={form.type}
-                name={form.name}
-                id={form.id}
+                className={` outline-none  ${
+                  (errors.name && mobileText(`${form}.name`) === "name") ||
+                  (errors.email && mobileText(`${form}.name`) === "email") ||
+                  (errors.msg && mobileText(`${form}.name`) === "msg")
+                    ? "border-b-2 border-[red]"
+                    : "border-b-2 border-black "
+                }`}
+                type={mobileText(`${form}.type`)}
+                id={mobileText(`${form}.id`)}
+                {...register(
+                  mobileText(`${form}.register`) as "name" | "email" | "msg",
+                  { required: true }
+                )}
               />
             </div>
           );
         })}
-        <div className="  text-[8rem] font-extrabold flex justify-center font-mono cursor-pointer hover:opacity-40 border-t-2 border-black mt-20">
-          {textT("send")}
+        <div className=" flex justify-center border-t-2 border-black mt-20">
+          <button className=" text-[8rem] font-extrabold  font-mono cursor-pointer hover:opacity-40  ">
+            {textT("send")}
+          </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

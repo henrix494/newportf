@@ -1,6 +1,5 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { formDetail } from "@/constants/ContactSection/FormDetails";
 import { useState } from "react";
 import { MsgTypes } from "@/Model/msg";
 import { useTranslations } from "next-intl";
@@ -14,7 +13,10 @@ type Inputs = {
 interface props {
   locale: string;
 }
+
 export default function FormC({ locale }: props) {
+  const formDetails = useTranslations("formDetails");
+  const keys = ["formOne", "formTwo", "formThree"] as const;
   const fromText = useTranslations("contactSection");
   const {
     register,
@@ -59,9 +61,9 @@ export default function FormC({ locale }: props) {
               className="flex  w-[80%] justify-around"
               onSubmit={handleSubmit(onSubmit)}
             >
-              {formDetail.map((form, index) => {
+              {keys.map((form, index) => {
                 return (
-                  <div className=" relative " key={form.id}>
+                  <div className=" relative " key={formDetails(`${form}.id`)}>
                     <label
                       className={` absolute  transition-all ${
                         isTyping.formId === index &&
@@ -69,27 +71,35 @@ export default function FormC({ locale }: props) {
                           ? " opacity-100 bottom-5"
                           : " opacity-0 bottom-0"
                       } `}
-                      htmlFor={form.name}
+                      htmlFor={formDetails(`${form}.name`)}
                     >
-                      {form.placeholder}
+                      {formDetails(`${form}.placeholder`)}
                     </label>
                     <input
-                      type={form.type}
-                      id={form.id}
+                      type={formDetails(`${form}.type`)}
+                      id={formDetails(`${form}.id`)}
                       className={`outline-none  ${
-                        (errors.name && form.name === "name") ||
-                        (errors.email && form.name === "email") ||
-                        (errors.msg && form.name === "msg")
+                        (errors.name &&
+                          formDetails(`${form}.name`) === "name") ||
+                        (errors.email &&
+                          formDetails(`${form}.name`) === "email") ||
+                        (errors.msg && formDetails(`${form}.name`) === "msg")
                           ? "border-b-2 border-[red]"
                           : "border-b-2 border-black "
                       }`}
-                      placeholder={form.placeholder}
-                      {...register(form.register as "name" | "email" | "msg", {
-                        onChange: () => handleAnimationTyping(index),
-                        onBlur: () =>
-                          setIsTyping({ formId: -1, isNowTyping: false }),
-                        required: true,
-                      })}
+                      placeholder={formDetails(`${form}.placeholder`)}
+                      {...register(
+                        formDetails(`${form}.register`) as
+                          | "name"
+                          | "email"
+                          | "msg",
+                        {
+                          onChange: () => handleAnimationTyping(index),
+                          onBlur: () =>
+                            setIsTyping({ formId: -1, isNowTyping: false }),
+                          required: true,
+                        }
+                      )}
                     />
                   </div>
                 );

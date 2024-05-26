@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { contactIcons } from "@/constants/ContactSection/contactText";
 import Image from "next/image";

@@ -115,7 +115,7 @@ export default function ProjectAni({
           </div>
           <h3
             ref={titleRef}
-            className="lg:text-[96px] font-bold translate-x-[5%] max-lg:text-4xl w-[90%] overflow-hidden"
+            className="lg:text-[96px]  font-bold translate-x-[5%] max-lg:text-4xl w-[90%] overflow-hidden"
           >
             {title}
           </h3>
@@ -133,7 +133,7 @@ export default function ProjectAni({
         </div>
         <h3
           ref={semiTitleRef}
-          className="text-[#3fb950] text-xl pr-5 max-lg:pt-7 lg:text-4xl font-bold opacity-0 w-[90%] pt-4"
+          className="text-[#3fb950] text-xl pr-5 max-lg:pl-5 max-lg:pt-7 lg:text-4xl font-bold opacity-0 w-[90%] pt-4"
         >
           {projetName}
         </h3>

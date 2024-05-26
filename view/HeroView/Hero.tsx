@@ -40,7 +40,11 @@ export default function Hero({ locale }: props) {
                 <nav key={index} className="flex text-3xl gap-20 max-lg:hidden">
                   {navBarLinksElements}
                 </nav>
-                <p className="lg:w-[70%] leading-10 lg:text-2xl lg:pt-10 relative lg:tracking-wide h-alot_of_text	">
+                <p
+                  className={`lg:w-[70%]  lg:text-2xl lg:pt-10 relative lg:tracking-wide h-alot_of_text ${
+                    locale === "en" ? "leading-7" : "leading-10"
+                  }	`}
+                >
                   <span className="mark">
                     {heroText("HeroMainTextMarkOne")}
                   </span>

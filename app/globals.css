@@ -6,6 +6,12 @@
   background: linear-gradient(transparent, #7c72ff 30%);
 }
 
+body {
+  background-color: #ecf0f0 !important;
+}
+input {
+  background-color: #ecf0f0 !important;
+}
 .bg_span_0 {
   background-color: #55d366;
   filter: blur(10px);

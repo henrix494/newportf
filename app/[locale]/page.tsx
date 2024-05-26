@@ -1,16 +1,16 @@
 import Hero from "@/view/HeroView/Hero";
-import ProjectPage from "@/view/projectView/PorjectPage";
 import Contact from "@/view/contactMe/Contact";
 import ContactMobile from "@/view/contactMe/ContactMobile";
 import ProjecyViewTest from "@/view/projectViewTest/ProjecyViewTest";
+import WhatUp from "@/components/Whatup/WhatUp";
 export default async function Home({ params: { locale } }: any) {
   return (
-    <main className="">
+    <main className="relative">
       <Hero locale={locale} />
-      {/* <ProjectPage /> */}
       <ProjecyViewTest />
       <Contact locale={locale} />
       <ContactMobile locale={locale} />
+      {/* <WhatUp/> */}
     </main>
   );
 }
