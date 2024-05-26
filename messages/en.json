@@ -64,18 +64,34 @@
     "name": "Name",
     "error": "A message has already been sent before",
     "msgSend": "Message sent",
-    "mobileName:":"Name"
-
+    "mobileName:": "Name"
   },
-  "contactMeMobile":{
-    "name":"Name",
-    "mail":"Mail",
-    "msg":"Message"
+  "contactMeMobile": {
+    "name": "Name",
+    "mail": "Mail",
+    "msg": "Message"
   },
-  "formDetails":{
-    "formOne":{"type":"text","name":"name","id":"name","placeholder":"Name","register":"name"},
-    "formTwo":{"type":"text","name":"email","id":"email","placeholder":"Email","register":"email"},
-    "formThree":{"type":"text","name":"msg","id":"msg","placeholder":"Message","register":"msg"}
+  "formDetails": {
+    "formOne": {
+      "type": "text",
+      "name": "name",
+      "id": "name",
+      "placeholder": "Name",
+      "register": "name"
+    },
+    "formTwo": {
+      "type": "text",
+      "name": "email",
+      "id": "email",
+      "placeholder": "Email",
+      "register": "email"
+    },
+    "formThree": {
+      "type": "text",
+      "name": "msg",
+      "id": "msg",
+      "placeholder": "Message",
+      "register": "msg"
+    }
   }
-  
 }

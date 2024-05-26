@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useForm,SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { sendMSg } from "@/actions/sendData";
 
@@ -10,22 +10,22 @@ interface props {
   locale: string;
 }
 
-type Inputs ={
-  name:string;
-  email:string;
-  msg:string
-}
+type Inputs = {
+  name: string;
+  email: string;
+  msg: string;
+};
 export default function ContactMobile({ locale }: props) {
   const textT = useTranslations("contactSection");
   const fromText = useTranslations("contactSection");
 
-  const mobileText = useTranslations("formDetails")
-  const keys = ["formOne","formTwo","formThree"] as const
-  const{
-  register,
-  handleSubmit,
-  formState:{errors}
-  }=useForm<Inputs>()
+  const mobileText = useTranslations("formDetails");
+  const keys = ["formOne", "formTwo", "formThree"] as const;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data: any) => {
     try {
       const dataFromServer = await sendMSg(data);
@@ -76,7 +76,10 @@ export default function ContactMobile({ locale }: props) {
       <form onSubmit={handleSubmit(onSubmit)}>
         {keys.map((form) => {
           return (
-            <div key={mobileText(`${form}.id`)} className=" flex flex-col items-center mb-5">
+            <div
+              key={mobileText(`${form}.id`)}
+              className=" flex flex-col items-center mb-5"
+            >
               <label className="text-4xl" htmlFor={mobileText(`${form}.name`)}>
                 {mobileText(`${form}.placeholder`)}
               </label>
@@ -87,18 +90,21 @@ export default function ContactMobile({ locale }: props) {
                   (errors.msg && mobileText(`${form}.name`) === "msg")
                     ? "border-b-2 border-[red]"
                     : "border-b-2 border-black "
-                }` }
+                }`}
                 type={mobileText(`${form}.type`)}
                 id={mobileText(`${form}.id`)}
-                {...register(mobileText(`${form}.register`) as "name" | "email" | "msg",{required:true})}
+                {...register(
+                  mobileText(`${form}.register`) as "name" | "email" | "msg",
+                  { required: true }
+                )}
               />
             </div>
           );
         })}
         <div className=" flex justify-center border-t-2 border-black mt-20">
-        <button className=" text-[8rem] font-extrabold  font-mono cursor-pointer hover:opacity-40  ">
-          {textT("send")}
-        </button>
+          <button className=" text-[8rem] font-extrabold  font-mono cursor-pointer hover:opacity-40  ">
+            {textT("send")}
+          </button>
         </div>
       </form>
     </div>

@@ -12,11 +12,11 @@ type Inputs = {
 };
 interface props {
   locale: string;
-}  
+}
 
 export default function FormC({ locale }: props) {
   const formDetails = useTranslations("formDetails");
-  const keys = ["formOne","formTwo","formThree"] as const;
+  const keys = ["formOne", "formTwo", "formThree"] as const;
   const fromText = useTranslations("contactSection");
   const {
     register,
@@ -79,19 +79,27 @@ export default function FormC({ locale }: props) {
                       type={formDetails(`${form}.type`)}
                       id={formDetails(`${form}.id`)}
                       className={`outline-none  ${
-                        (errors.name && formDetails(`${form}.name`) === "name") ||
-                        (errors.email && formDetails(`${form}.name`) === "email") ||
+                        (errors.name &&
+                          formDetails(`${form}.name`) === "name") ||
+                        (errors.email &&
+                          formDetails(`${form}.name`) === "email") ||
                         (errors.msg && formDetails(`${form}.name`) === "msg")
                           ? "border-b-2 border-[red]"
                           : "border-b-2 border-black "
                       }`}
-                      placeholder={formDetails(`${form}.placeholder`) }
-                      {...register(formDetails(`${form}.register`) as "name" | "email" | "msg", {
-                        onChange: () => handleAnimationTyping(index),
-                        onBlur: () =>
-                          setIsTyping({ formId: -1, isNowTyping: false }),
-                        required: true,
-                      })}
+                      placeholder={formDetails(`${form}.placeholder`)}
+                      {...register(
+                        formDetails(`${form}.register`) as
+                          | "name"
+                          | "email"
+                          | "msg",
+                        {
+                          onChange: () => handleAnimationTyping(index),
+                          onBlur: () =>
+                            setIsTyping({ formId: -1, isNowTyping: false }),
+                          required: true,
+                        }
+                      )}
                     />
                   </div>
                 );

@@ -4,12 +4,10 @@ import { contactIcons } from "@/constants/ContactSection/contactText";
 import Image from "next/image";
 import FormC from "@/components/Contact/FormC";
 import { useTranslations } from "next-intl";
-
 interface props {
   locale: string;
 }
 export default function Contact({ locale }: props) {
-
   const contactText = useTranslations("contactSection");
 
   return (

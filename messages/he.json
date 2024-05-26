@@ -64,16 +64,34 @@
     "name": "שם",
     "error": "הודעה כבר נישלחה בעבר",
     "msgSend": "הודעה נשלחה",
-    "mobileName:":"שם"
+    "mobileName:": "שם"
   },
-  "contactMeMobile":{
-    "name":"שם",
-    "mail":"מייל",
-    "msg":"הודעה"
+  "contactMeMobile": {
+    "name": "שם",
+    "mail": "מייל",
+    "msg": "הודעה"
   },
-  "formDetails":{
-    "formOne":{"type":"text","name":"name","id":"name","placeholder":"שם","register":"name"},
-    "formTwo":{"type":"text","name":"email","id":"email","placeholder":"מייל","register":"email"},
-    "formThree":{"type":"text","name":"msg","id":"msg","placeholder":"הודעה","register":"msg"}
+  "formDetails": {
+    "formOne": {
+      "type": "text",
+      "name": "name",
+      "id": "name",
+      "placeholder": "שם",
+      "register": "name"
+    },
+    "formTwo": {
+      "type": "text",
+      "name": "email",
+      "id": "email",
+      "placeholder": "מייל",
+      "register": "email"
+    },
+    "formThree": {
+      "type": "text",
+      "name": "msg",
+      "id": "msg",
+      "placeholder": "הודעה",
+      "register": "msg"
+    }
   }
 }
