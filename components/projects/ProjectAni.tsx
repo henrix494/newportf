@@ -151,7 +151,7 @@ export default function ProjectAni({
         </div>
         <div className="w-[90%]">
           <article className="lg:w-[60%] mt-2 pt-5">{projectDes}</article>
-          <div className="my-5 flex gap-5 flex-wrap">
+          <div className="my-5 flex gap-5 flex-wrap ">
             {[techOne, techTwo, techThree, teachFour].map(
               (tech, idx) =>
                 tech && (
@@ -161,6 +161,7 @@ export default function ProjectAni({
                     width={80}
                     height={80}
                     alt="tech"
+                    className="max-lg:w-12"
                   />
                 )
             )}

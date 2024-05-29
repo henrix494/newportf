@@ -44,7 +44,7 @@ export default function ContactMobile({ locale }: props) {
     }
   };
   return (
-    <div className="lg:hidden mt-10">
+    <div className="lg:hidden mt-10 ">
       <div className=" opacity-35">
         <Image
           className="w-screen"
@@ -55,22 +55,18 @@ export default function ContactMobile({ locale }: props) {
         />
       </div>
       <div
-        className={`text-center font-mono font-bold text-[8rem] leading-[82%] mb-10 ${
+        className={`text-center font-mono font-bold text-[2rem] leading-[82%] mb-10 mt-10 ${
           locale === "en" ? "hidden" : "block"
         } `}
       >
-        <h3 className=" text-center"> צור</h3>
-        <h3 className=" text-center mr-8"> איתי</h3>
-        <h3 className=" text-center">קשר</h3>
+        <h3 className=" text-center"> צור איתי קשר</h3>
       </div>
       <div
-        className={`text-center font-mono font-bold text-[8rem] leading-[90%] mb-10 ${
+        className={`text-center font-mono font-bold text-[2rem] leading-[90%] mb-10 ${
           locale === "he" ? "hidden" : "block"
         } `}
       >
-        <h3 className=" text-center"> Con</h3>
-        <h3 className=" text-center "> tact</h3>
-        <h3 className=" text-center">Me</h3>
+        <h3 className=" text-center mt-10"> Contact Me</h3>
       </div>
       {/* start of form */}
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -80,7 +76,7 @@ export default function ContactMobile({ locale }: props) {
               key={mobileText(`${form}.id`)}
               className=" flex flex-col items-center mb-5"
             >
-              <label className="text-4xl" htmlFor={mobileText(`${form}.name`)}>
+              <label className="text-2xl" htmlFor={mobileText(`${form}.name`)}>
                 {mobileText(`${form}.placeholder`)}
               </label>
               <input
@@ -102,7 +98,7 @@ export default function ContactMobile({ locale }: props) {
           );
         })}
         <div className=" flex justify-center border-t-2 border-black mt-20">
-          <button className=" text-[8rem] font-extrabold  font-mono cursor-pointer hover:opacity-40  ">
+          <button className=" text-[4rem] font-extrabold  font-mono cursor-pointer hover:opacity-40  ">
             {textT("send")}
           </button>
         </div>
